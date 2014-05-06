@@ -1,0 +1,27 @@
+.menu{
+    list-style: none;
+}
+.selected{
+    background-color: eae7e7;
+    z-index:1;
+    position:absolute;
+    height:150px;
+    width: 128px;
+    border: 1px solid #b5b5b5;
+    display:none;
+    text-align: center;
+    border-radius:5px;
+
+}
+.menu li{
+    /* position:relative; */
+    float:left;
+    height:128px;
+    width:128px;
+    cursor: pointer;
+    border-radius:5px;
+}
+.menu li img{
+    position:absolute;
+    z-index:10;
+}

@@ -1,52 +1,9 @@
-# Directories #
-build
-bin/
-target/
- 
-# OS Files #
-.DS_Store
- 
-*.class
- 
-# Package Files #
-*.jar
-.war
-*.ear
-*.db
- 
-######################
-# Windows
-######################
- 
-# Windows image file caches
-Thumbs.db 
- 
-# Folder config file
-Desktop.ini
- 
-######################
-# OSX
-######################
- 
-.DS_Store
-.svn
- 
-# Thumbnails
-._*
- 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
 #################
 ## Eclipse
 #################
 
 *.pydevproject
-
 .metadata
-
-
 *.tmp
 *.bak
 *.swp
@@ -57,7 +14,7 @@ local.properties
 .loadpath
 
 # External tool builders
-.externalToolBuilders/
+
 
 # Locally stored "Eclipse launch configurations"
 *.launch
@@ -66,7 +23,7 @@ local.properties
 .cproject
 
 # PDT-specific
-.buildpath
+
 
 
 #################
@@ -86,7 +43,7 @@ local.properties
 [Dd]ebug/
 [Rr]elease/
 x64/
-build/
+
 [Bb]in/
 [Oo]bj/
 
@@ -232,8 +189,8 @@ $RECYCLE.BIN/
 # Packages
 *.egg
 *.egg-info
-dist/
-build/
+
+
 eggs/
 parts/
 var/
