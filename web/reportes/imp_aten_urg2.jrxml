@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imp_aten_urg2" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<parameter name="hi_DX_PRESUNTIVOS_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_CONDICIONES_GENERAL_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_PLAN_AMBULATORIO_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_FECHA_SALIDA_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_HORA_SALIDA_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="csv" class="java.lang.String"/>
+	<parameter name="csm" class="java.lang.String"/>
+	<parameter name="crdom" class="java.lang.String"/>
+	<parameter name="crcon" class="java.lang.String"/>
+	<parameter name="crhos" class="java.lang.String"/>
+	<parameter name="crrem" class="java.lang.String"/>
+	<parameter name="crotr" class="java.lang.String"/>
+	<parameter name="hi_OTRO_SALIDA_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_SERVICIO_SALIDA_ATEN_URGEN" class="java.lang.String"/>
+	<parameter name="hi_NOMBRE_SALIDA" class="java.lang.String"/>
+	<parameter name="hi_CIUDAD_SALIDA" class="java.lang.String"/>
+	<parameter name="hi_CODDIAGPPAL5_ATEN_URGEN" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="671" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="6" width="153" height="17" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E. SALIDA DEL PACIENTE]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="26" y="28" width="536" height="554" forecolor="#339900"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="32" y="33" width="139" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[DX PRESUNTIVOS, PRINCIPALES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="286" width="139" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[CONDICION GENERAL DE EGRESO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="298" width="519" height="126"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_CONDICIONES_GENERAL_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="449" width="139" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[PLAN AMBULATORIO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="462" width="519" height="106"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_PLAN_AMBULATORIO_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="26" y="596" width="536" height="69" forecolor="#339900"/>
+			</rectangle>
+			<line>
+				<reportElement x="26" y="644" width="136" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="35" y="646" width="21" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[AÑOS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="112" y="615" width="1" height="49" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="125" y="646" width="21" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="646" width="14" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[DIA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="161" y="595" width="1" height="69" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="65" y="646" width="16" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
+			<line>
+				<reportElement x="26" y="614" width="136" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="76" y="601" width="31" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="624" width="53" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_FECHA_SALIDA_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="117" y="624" width="39" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_HORA_SALIDA_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="171" y="597" width="46" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[CONDICION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="615" width="31" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Muerto]]></text>
+			</staticText>
+			<line>
+				<reportElement x="205" y="614" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="205" y="626" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="205" y="613" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="216" y="614" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="205" y="630" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="205" y="631" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="205" y="643" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="172" y="632" width="31" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Vivo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="216" y="631" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<textField>
+				<reportElement x="207" y="632" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{csv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="614" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{csm}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="222" y="595" width="1" height="69" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="226" y="597" width="46" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[CONDICION]]></text>
+			</staticText>
+			<line>
+				<reportElement x="291" y="620" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="291" y="607" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="226" y="608" width="39" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Domicilio]]></text>
+			</staticText>
+			<line>
+				<reportElement x="291" y="607" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="302" y="607" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="302" y="622" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="291" y="635" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="226" y="623" width="65" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Consulta externa]]></text>
+			</staticText>
+			<line>
+				<reportElement x="291" y="622" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="291" y="622" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="252" y="637" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="241" y="637" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="241" y="649" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="241" y="636" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="226" y="638" width="14" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[otro]]></text>
+			</staticText>
+			<line>
+				<reportElement x="361" y="607" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="361" y="606" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="372" y="607" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="361" y="619" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="307" y="608" width="54" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Hospitalizacion]]></text>
+			</staticText>
+			<line>
+				<reportElement x="361" y="634" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="361" y="621" width="12" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="372" y="622" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="307" y="623" width="33" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Remitido]]></text>
+			</staticText>
+			<line>
+				<reportElement x="361" y="622" width="1" height="13" forecolor="#339900"/>
+			</line>
+			<staticText>
+				<reportElement x="254" y="638" width="37" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Cual?]]></text>
+			</staticText>
+			<line>
+				<reportElement x="375" y="595" width="1" height="69" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="226" y="662" width="141" height="1" forecolor="#339900"/>
+			</line>
+			<textField>
+				<reportElement x="293" y="609" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{crdom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="624" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{crcon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="608" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{crhos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="623" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{crrem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="638" width="9" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{crotr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="226" y="651" width="141" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_OTRO_SALIDA_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="379" y="608" width="29" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="623" width="29" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="639" width="29" height="10" forecolor="#009900"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="413" y="616" width="141" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="413" y="633" width="141" height="1" forecolor="#339900"/>
+			</line>
+			<line>
+				<reportElement x="413" y="648" width="141" height="1" forecolor="#339900"/>
+			</line>
+			<textField>
+				<reportElement x="413" y="605" width="138" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_SERVICIO_SALIDA_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="621" width="138" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_NOMBRE_SALIDA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="637" width="138" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_CIUDAD_SALIDA}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="34" y="45" width="10" height="227" forecolor="#339900"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="44" y="59" width="63" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[COD. Dx PPAL
+
+	 ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="216" width="59" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dx 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="107" width="63" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[COD. Dx 1
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="118" width="59" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dx 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="205" width="63" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[COD. Dx 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="70" width="59" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dx PPAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="167" width="59" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[Dx 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="156" width="63" height="10" forecolor="#009900"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[COD. Dx 2
+
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="117" y="59" width="70" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{hi_CODDIAGPPAL5_ATEN_URGEN}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>
